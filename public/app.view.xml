@@ -1,0 +1,25 @@
+<mvc:View
+	controllerName="Slowstart.start"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form" 
+	xmlns:m="sap.m" 
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	class="viewPadding">
+	<App>
+	<Page>
+	<m:FlexBox alignItems="Center" justifyContent="Center">
+				<l:VerticalLayout>
+			<l:HorizontalLayout>
+				<Button
+				text="Registracija"
+				press="registerDirect"
+				type="Emphasized"
+				class="sapUiSmallMargin"/>
+			</l:HorizontalLayout>
+		</l:VerticalLayout>
+	</m:FlexBox>
+		
+	</Page>
+	</App>
+</mvc:View>

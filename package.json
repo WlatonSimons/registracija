@@ -1,0 +1,11 @@
+{
+    "name": "Test",
+    "description": "Big test",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "ejs": "^3.1.5",
+        "express": "3.x",
+        "node-inspector": "0.7.x"
+    }
+}

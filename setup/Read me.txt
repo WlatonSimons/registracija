@@ -1,0 +1,11 @@
+Projekte naudojamas MySQL serveris ir NodeJS
+
+config.js failas laiko duomenų bazės ir MySQL serverio konfiguracijos duomenys, host, user ir password laukus reikia užpildyti  savais duomenimis.
+
+norint sukurti duomenų bazę naudojamą projekte reikia paleisti Setup.js faila naudojant komandą node setup
+
+norint paleisti projektą reikia paleisti server.js faila naudojant komandą node server 
+
+Serveris pasileidžia naudodamas portą 8080
+
+Norint išbandyti projekta reikia pereiti adresu localhost:8080

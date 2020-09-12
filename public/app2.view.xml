@@ -1,0 +1,90 @@
+<mvc:View
+	controllerName="Slowstart.start"
+	xmlns="sap.m"
+	xmlns:t="sap.ui.table"
+	xmlns:f="sap.ui.layout.form" 
+	xmlns:m="sap.m" 
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	class="viewPadding">
+	<App>
+		<Page title="Registracija">
+			<m:FlexBox alignItems="Center" justifyContent="Center">
+				<l:VerticalLayout>
+					<m:FlexBox 	alignItems="Center" justifyContent="Center">
+					<m:items>
+					<Text text="Asmenine informacija" class="labelMarginLeft"/>
+					</m:items>
+					</m:FlexBox>
+					<l:HorizontalLayout>
+						<Input  placeholder="Vardas"  id="name" liveChange="validateKey"/>
+						<Input  placeholder="Pavarde" id="lname" liveChange="validateKey"/>
+					</l:HorizontalLayout>
+					<u:Calendar
+						id="calendar"
+						select="handleCalendarSelect"
+						minDate="{path: '/minDate'}"
+						maxDate="{path: '/maxDate'}"
+						showWeekNumbers="false">
+					</u:Calendar>
+					<l:HorizontalLayout>
+							<Button  press="handleOpenDialog" text="Pasirinkti laiką" class="sapUiSmallMargin" width="120px"/>
+							<Button  press="handleSendDate"   text="Registruotis"            class="sapUiSmallMargin" width="120px"/>
+					</l:HorizontalLayout>
+					<l:HorizontalLayout>
+					<Button  press="table"   text="Registracijų peržiura"    class="sapUiSmallMargin" width="280px"/>
+												
+					</l:HorizontalLayout>
+
+
+					<m:FlexBox 	alignItems="Center" justifyContent="Center">
+					<m:items>
+						<FlexBox height="100px" alignItems="Center" justifyContent="Start">
+							<Text text="Pasirinkta data" class="sapUiSmallMargin"/>
+							<Text id="selectedDate" text="-" class="sapUiSmallMargin"/>
+						</FlexBox>	
+					</m:items>
+					</m:FlexBox>
+
+					<m:FlexBox 	alignItems="Center" justifyContent="Center">
+					<m:items>
+						<FlexBox height="100px" alignItems="Center" justifyContent="Start">
+							<Text text="Pasirinktas laikas" class="sapUiSmallMargin" />
+							<Text id="T1" text="-" class="sapUiSmallMargin" />
+						</FlexBox>	
+					</m:items>
+					</m:FlexBox>
+
+				</l:VerticalLayout>
+			</m:FlexBox>
+
+		<m:content>
+		<Table id="ins" items="{/}" visible="false" >
+			<columns>
+				<Column>
+					<Text text="Vardas" />
+				</Column>
+				
+				<Column minScreenWidth="Tablet" demandPopin="true">
+					<Text text="Pavarde" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true">
+					<Text text="Data" />
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true">
+					<Text text="Laikas" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<cells>
+						<Text text="{name}"/><Text text="{lname}"/><Text text="{date}"/><Text text="{time}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		</m:content>
+		</Page>
+	</App>
+</mvc:View>
